@@ -1,2 +1,2 @@
-# rgtmetrix
-This is a convenience wrapper to use the current version of the GTmetrix API
+# webspeed
+This is a convenience wrapper for the GTmetrix API (and maybe others in the future)
