@@ -1,4 +1,4 @@
 library(testthat)
-library(rgtm)
+library(rgtmx)
 
-test_check("rgtm")
+test_check("rgtmx")

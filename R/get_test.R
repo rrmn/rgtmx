@@ -1,4 +1,4 @@
-get_test <- function(test_id, api_key, wait_for_completion = TRUE, ...) {
+get_test <- function(test_id, api_key, wait_for_completion = TRUE) {
 
   if (missing(test_id)) {
     stop("Please enter a test ID")
@@ -45,7 +45,7 @@ get_test <- function(test_id, api_key, wait_for_completion = TRUE, ...) {
 
     while (type == "test") {
 
-      timeout <- round(runif(1, 3, 4), 2)
+      timeout <- round(stats::runif(1, 3, 4), 2)
       message(paste0("Report not generated, yet. Retrying in ", timeout, " seconds..."))
       Sys.sleep(timeout)
 
