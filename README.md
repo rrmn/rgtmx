@@ -52,27 +52,31 @@ Other optional parameters: `location`,
 `browser_dppx`,
 `browser_rotate`.
 
-### Show available browsers
+### Locations
 ```
-show_available_browsers("[API_KEY]")
-```
-### Show available locations
-```
+# Show available locations
 show_available_locations("[API_KEY]")
+# Get location details
+get_location_details(location_id = 1, "[API_KEY]")
 ```
-### Get specific test
+### Browsers
 ```
+# Show available browsers
+show_available_browsers("[API_KEY]")
+# Get browser details
+get_browser_details(browser_id = 3, [API_KEY]")
+```
+### Tests / Reports
+```
+# Get specific test
 get_test("[TEST_ID]", "[API_KEY]")
-```
-### Get specific report
-```
+# Get specific report
 get_report("[REPORT_ID]", "[API_KEY]")
-```
-### Get all tests
-```
+# Get all tests
 get_all_tests("[API_KEY]")
 ```
-### Get account status
+### Account
 ```
+# Get account status and available credits
 get_account_status("[API_KEY]")
 ```

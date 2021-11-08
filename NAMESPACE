@@ -2,6 +2,8 @@
 
 export(get_account_status)
 export(get_all_tests)
+export(get_browser_details)
+export(get_location_details)
 export(get_report)
 export(get_test)
 export(show_available_browsers)

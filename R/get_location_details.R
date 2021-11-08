@@ -1,3 +1,15 @@
+#' @title Show location details
+#'
+#' @description Get details for a specific locations ID.
+#'
+#' @param location_id Location ID. (integer)
+#' @param api_key An active GTmetrix API key. (string)
+#'
+#' @return A data.frame object that contains available locations and their meta data.
+#' @examples
+#' \dontrun{output_table <- get_location_details(location_id = 3, api_key = "API_KEY")}
+#' @export
+
 get_location_details <- function(location_id, api_key) {
 
   if (missing(location_id)) {

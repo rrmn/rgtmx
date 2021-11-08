@@ -1,3 +1,15 @@
+#' @title Show browser details
+#'
+#' @description Get details for a specific browsers ID.
+#'
+#' @param browser_id Browser ID. (integer)
+#' @param api_key An active GTmetrix API key. (string)
+#'
+#' @return A data.frame object that contains available browsers and their meta data.
+#' @examples
+#' \dontrun{output_table <- get_browser_details(browser_id = 3, api_key = "API_KEY")}
+#' @export
+
 get_browser_details <- function(browser_id, api_key) {
 
   if (missing(browser_id)) {
