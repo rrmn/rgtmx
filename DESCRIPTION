@@ -2,13 +2,14 @@ Package: rgtmx
 Type: Package
 Title: Manage GTmetrix Tests
 Version: 0.1.0
-Author: Roman A. Abashin
-Maintainer: Roman A. Abashin <roman@romanabashin.com>
+Authors@R: 
+    person("Roman A.", "Abashin", email = "r@romanabashin.com", role = c("cre","aut"))
+Maintainer: Roman A. Abashin <r@romanabashin.com>
 Description: This is a library to access the current API of the webspeed test service GTmetrix.com.
     It provides a convenient wrapper to start tests, get reports, and access all kinds of meta data. 
 License: MIT + file LICENSE
-URL: https://github.com/RomanAbashin/rgtm
-BugReports: https://github.com/RomanAbashin/rgtm/issues
+URL: https://github.com/RomanAbashin/rgtmx
+BugReports: https://github.com/RomanAbashin/rgtmx/issues
 Depends: 
     R (>= 3.1)
 Imports: 
@@ -17,6 +18,9 @@ Imports:
 Encoding: UTF-8
 LazyData: true
 Suggests: 
+    rmarkdown,
+    knitr,
     testthat (>= 3.0.0)
 Config/testthat/edition: 3
 RoxygenNote: 7.1.2
+VignetteBuilder: knitr
