@@ -14,9 +14,7 @@
 get_all_tests <- function(api_key, page_size = 50, page_number = 1) {
 
 
-  if (missing(page_size)) {
-    stop("Please enter a page size")
-  } else if (is.null(page_size)) {
+  if (is.null(page_size)) {
     stop("Please enter a page size")
   } else if (is.na(page_size)) {
     stop("Please enter a page size")
@@ -32,9 +30,7 @@ get_all_tests <- function(api_key, page_size = 50, page_number = 1) {
     stop("Please enter a page size of 1 or larger")
   }
 
-  if (missing(page_number)) {
-    stop("Please enter a page number")
-  } else if (is.null(page_number)) {
+  if (is.null(page_number)) {
     stop("Please enter a page number")
   } else if (is.na(page_number)) {
     stop("Please enter a page number")
