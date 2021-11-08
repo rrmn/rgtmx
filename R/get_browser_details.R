@@ -29,7 +29,7 @@ get_browser_details <- function(browser_id, api_key) {
 
 
   res <- httr::GET(
-    url = paste0("https://gtmetrix.com/api/2.0/locations/", location_id),
+    url = paste0("https://gtmetrix.com/api/2.0/browsers/", browser_id),
     httr::authenticate(api_key, ""),
     httr::content_type("application/vnd.api+json")
   )

@@ -1,4 +1,17 @@
-list_all_tests <- function(api_key, page_size = 40, page_number = 1, ...) {
+#' @title get_all_tests
+#'
+#' @description Get a table of tests, their report IDs and other meta data.
+#'
+#' @param api_key An active GTmetrix API key. (string)
+#' @param page_size Page size (default 50, max 500)
+#' @param page_number Page (default 1)
+#'
+#' @return A data.frame object that contains tests and their meta data..
+#' @examples
+#' \dontrun{output_table <- get_all_tests(api_key = "API_KEY")}
+#' @export
+
+get_all_tests <- function(api_key, page_size = 50, page_number = 1) {
 
 
   if (missing(page_size)) {

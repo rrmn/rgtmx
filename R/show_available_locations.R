@@ -1,4 +1,15 @@
-list_available_browsers <- function(api_key) {
+#' @title show_available_locations
+#'
+#' @description Show available locations for the supplied API key.
+#'
+#' @param api_key An active GTmetrix API key. (string)
+#'
+#' @return A data.frame object that contains available locations and their meta data.
+#' @examples
+#' \dontrun{output_table <- show_available_locations(api_key = "API_KEY")}
+#' @export
+
+show_available_locations <- function(api_key) {
 
   if (missing(api_key)) {
     stop("Please enter a API key")
@@ -14,7 +25,7 @@ list_available_browsers <- function(api_key) {
 
 
   res <- httr::GET(
-    url = paste0("https://gtmetrix.com/api/2.0/browsers"),
+    url = paste0("https://gtmetrix.com/api/2.0/locations"),
     httr::authenticate(api_key, ""),
     httr::content_type("application/vnd.api+json")
   )

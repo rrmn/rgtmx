@@ -1,19 +1,47 @@
-#' @title start_test
+#' @title Start a GTmetrix test
 #'
-#' @description Starts a GTmetrix test and returns the test or the report
+#' @description \code{start_test} starts a GTmetrix test and returns either the test itself (incl. meta data) or the associated report.
 #'
-#' @param url The web url to test. (https:// or http:// are optional)
-#' @param api_key An active GTmetrix API key
-#' @param wait_for_completion Whether the function should wait for the completion of the test. If TRUE (default), the report associated with the test ID will be requested in roughly 3 second intervals and returned, when successful. If FALSE, the meta data of the test will be returned.
-#' @param location Location ID. Default = 1
-#' @param browser Location ID. Default = 1
+#' @param url The URL of the page to test. (string)
+#' @param api_key An active GTmetrix API key (string)
+#' @param wait_for_completion Whether the function should wait for the completion of the test. If TRUE (default), the report associated with the test ID will be requested in roughly 3 second intervals and returned, when successful. If FALSE, the meta data of the test will be returned. (TRUE, FALSE)
+#' @param location Location ID. Default = "1"
+#' @param browser Location ID. Default = "3"
+#' @param report A string for the type of report. "lighthouse" (default) for Lighthouse, "legacy" for PageSpeed/YSlow, "lighthouse,legacy" for both, "none" for a metrics-only report.
+#' @param retention Choose how long (in months) the report will be retained and accessible. Valid values: 1 (default), 6, 12, 24.
+#' @param httpauth_username Username for the test page HTTP access authentication. (string)
+#' @param httpauth_password Password for the test page HTTP access authentication. (string)
+#' @param adblock Enable AdBlock. 1 (default) = yes, 0 = no.
+#' @param cookies Specify cookies to supply with test page requests.
+#' @param video Enable generation of video. 0 (default) = no, 1 = yes
+#' @param stop_onload Stop the test at window.onload instead of after the page has fully loaded (ie. 2 seconds of network inactivity).	0 (default) = no, 1 = yes
+#' @param throttle Throttle the connection. Speed measured in Kbps, latency in ms. Format: "up/down/latency"
+#' @param allow_url Only load resources that match one of the URLs on this list. This uses the same syntax as the web front end.
+#' @param block_url Prevent loading of resources that match one of the URLs on this list. This occurs after the Only Allow URLs are applied. This uses the same syntax as the web front end.
+#' @param dns Use a custom DNS host and IP to run the test with.
+#' @param simulate_device Simulate the display of your site on a variety of devices using a pre-selected combination of Screen Resolutions, User Agents, and Device Pixel Ratios. (Expected: Device ID)
+#' @param user_agent Use a custom User Agent string.
+#' @param browser_width Set the width of the viewport for the analysis. Also requires browser_height to be set.
+#' @param browser_height Set the height of the viewport for the analysis. Also requires browser_width to be set.
+#' @param browser_dppx Set the device pixel ratio for the analysis. Decimals are allowed.
+#' @param browser_rotate Swaps the width and height of the viewport for the analysis. \code{simulate_device} overrides this parameter with preset values.
 #'
-#' @return A data frame object that contains either the test meta data or the GTmetrix report.
+#' @return A data.frame object that contains either the test meta data or the GTmetrix report.
 #' @examples
-#' \dontrun{output_table <- start_test("google.com", api_key = "API_KEY", wait_for_completion = TRUE)}
+#' \dontrun{output_table <- start_test(
+#'                            url = "google.com",
+#'                            api_key = "API_KEY",
+#'                            wait_for_completion = TRUE
+#'                          )}
 #' @export
 
-start_test <- function(url, api_key, wait_for_completion = TRUE, ...) {
+start_test <- function(url, api_key, wait_for_completion = TRUE, location = 1,
+                       browser = 3, report = "lighthouse", retention = 1, httpauth_username = NULL, httpauth_password = NULL, adblock = 1, cookies = NULL,
+                       video = 0, stop_onload = 0, throttle = NULL,
+                       allow_url = NULL, block_url = NULL, dns = NULL,
+                       simulate_device = NULL, user_agent = NULL,
+                       browser_width = NULL, browser_height = NULL,
+                       browser_dppx = NULL, browser_rotate = NULL) {
 
   if (missing(url)) {
     stop("Please enter a URL")

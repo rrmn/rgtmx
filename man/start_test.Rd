@@ -2,23 +2,91 @@
 % Please edit documentation in R/start_test.R
 \name{start_test}
 \alias{start_test}
-\title{start_test}
+\title{Start a GTmetrix test}
 \usage{
-start_test(url, api_key, wait_for_completion = TRUE, ...)
+start_test(
+  url,
+  api_key,
+  wait_for_completion = TRUE,
+  location = 1,
+  browser = 3,
+  report = "lighthouse",
+  retention = 1,
+  httpauth_username = NULL,
+  httpauth_password = NULL,
+  adblock = 1,
+  cookies = NULL,
+  video = 0,
+  stop_onload = 0,
+  throttle = NULL,
+  allow_url = NULL,
+  block_url = NULL,
+  dns = NULL,
+  simulate_device = NULL,
+  user_agent = NULL,
+  browser_width = NULL,
+  browser_height = NULL,
+  browser_dppx = NULL,
+  browser_rotate = NULL
+)
 }
 \arguments{
-\item{url}{The web url to test. (https:// or http:// are optional)}
+\item{url}{The URL of the page to test. (string)}
 
-\item{api_key}{An active GTmetrix API key}
+\item{api_key}{An active GTmetrix API key (string)}
 
-\item{wait_for_completion}{Whether the function should wait for the completion of the test. If TRUE (default), the report associated with the test ID will be requested in roughly 3 second intervals and returned, when successful. If FALSE, the meta data of the test will be returned.}
+\item{wait_for_completion}{Whether the function should wait for the completion of the test. If TRUE (default), the report associated with the test ID will be requested in roughly 3 second intervals and returned, when successful. If FALSE, the meta data of the test will be returned. (TRUE, FALSE)}
+
+\item{location}{Location ID. Default = "1"}
+
+\item{browser}{Location ID. Default = "3"}
+
+\item{report}{A string for the type of report. "lighthouse" (default) for Lighthouse, "legacy" for PageSpeed/YSlow, "lighthouse,legacy" for both, "none" for a metrics-only report.}
+
+\item{retention}{Choose how long (in months) the report will be retained and accessible. Valid values: 1 (default), 6, 12, 24.}
+
+\item{httpauth_username}{Username for the test page HTTP access authentication. (string)}
+
+\item{httpauth_password}{Password for the test page HTTP access authentication. (string)}
+
+\item{adblock}{Enable AdBlock. 1 (default) = yes, 0 = no.}
+
+\item{cookies}{Specify cookies to supply with test page requests.}
+
+\item{video}{Enable generation of video. 0 (default) = no, 1 = yes}
+
+\item{stop_onload}{Stop the test at window.onload instead of after the page has fully loaded (ie. 2 seconds of network inactivity).    0 (default) = no, 1 = yes}
+
+\item{throttle}{Throttle the connection. Speed measured in Kbps, latency in ms. Format: "up/down/latency"}
+
+\item{allow_url}{Only load resources that match one of the URLs on this list. This uses the same syntax as the web front end.}
+
+\item{block_url}{Prevent loading of resources that match one of the URLs on this list. This occurs after the Only Allow URLs are applied. This uses the same syntax as the web front end.}
+
+\item{dns}{Use a custom DNS host and IP to run the test with.}
+
+\item{simulate_device}{Simulate the display of your site on a variety of devices using a pre-selected combination of Screen Resolutions, User Agents, and Device Pixel Ratios. (Expected: Device ID)}
+
+\item{user_agent}{Use a custom User Agent string.}
+
+\item{browser_width}{Set the width of the viewport for the analysis. Also requires browser_height to be set.}
+
+\item{browser_height}{Set the height of the viewport for the analysis. Also requires browser_width to be set.}
+
+\item{browser_dppx}{Set the device pixel ratio for the analysis. Decimals are allowed.}
+
+\item{browser_rotate}{Swaps the width and height of the viewport for the analysis. \code{simulate_device} overrides this parameter with preset values.}
 }
 \value{
-A data frame object that contains either the test meta data or the GTmetrix report.
+A data.frame object that contains either the test meta data or the GTmetrix report.
 }
 \description{
-Starts a GTmetrix test and returns the test or the report
+\code{start_test} starts a GTmetrix test and returns either the test itself (incl. meta data) or the associated report.
 }
 \examples{
-\dontrun{output_table <- start_test("google.com", api_key = "API_KEY", wait_for_completion = TRUE)}
+\dontrun{output_table <- start_test(
+                           url = "google.com",
+                           api_key = "API_KEY",
+                           wait_for_completion = TRUE
+                         )}
 }
