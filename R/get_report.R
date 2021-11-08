@@ -1,3 +1,18 @@
+#' @title Get status and meta data of a specific report
+#'
+#' @description Get status and meta data of a specific GTmetrix report.
+#'
+#' @param report_id ID of a GTmetrix report. (string)
+#' @param api_key An active GTmetrix API key. (string)
+#'
+#' @return  A data.frame object that contains a GTmetrix report and its meta data.
+#' @examples
+#' \dontrun{output_table <- get_report(
+#'                            test_id = "REPORT_ID",
+#'                            api_key = "API_KEY"
+#'                          )}
+#' @export
+
 get_report <- function(report_id, api_key) {
 
   if (missing(report_id)) {

@@ -1,4 +1,4 @@
-#' @title show_available_browsers
+#' @title Show available browsers
 #'
 #' @description Show available browsers for the supplied API key.
 #'

@@ -2,7 +2,7 @@
 % Please edit documentation in R/show_available_locations.R
 \name{show_available_locations}
 \alias{show_available_locations}
-\title{show_available_locations}
+\title{Show available locations}
 \usage{
 show_available_locations(api_key)
 }

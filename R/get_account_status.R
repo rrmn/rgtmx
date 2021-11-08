@@ -1,3 +1,16 @@
+#' @title Get the status of your GTmetrix account
+#'
+#' @description Show available credits and other meta data for the suppliad API key.
+#'
+#' @param api_key An active GTmetrix API key. (string)
+#'
+#' @return  A data.frame that contains meta data of a GTmetrix account.
+#' @examples
+#' \dontrun{output_table <- get_account_status(
+#'                            api_key = "API_KEY"
+#'                          )}
+#' @export
+
 get_account_status <- function(api_key) {
 
   if (missing(api_key)) {

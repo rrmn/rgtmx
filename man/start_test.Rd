@@ -2,7 +2,7 @@
 % Please edit documentation in R/start_test.R
 \name{start_test}
 \alias{start_test}
-\title{Start a GTmetrix test}
+\title{Start a GTmetrix test (and get the result)}
 \usage{
 start_test(
   url,
@@ -78,7 +78,7 @@ start_test(
 \item{browser_rotate}{Swaps the width and height of the viewport for the analysis. \code{simulate_device} overrides this parameter with preset values.}
 }
 \value{
-A data.frame object that contains either the test meta data or the GTmetrix report.
+A data.frame object that contains either the test meta data or the GTmetrix report (if it's already completed).
 }
 \description{
 \code{start_test} starts a GTmetrix test and returns either the test itself (incl. meta data) or the associated report.

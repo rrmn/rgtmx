@@ -1,4 +1,4 @@
-#' @title show_available_locations
+#' @title Show available locations
 #'
 #' @description Show available locations for the supplied API key.
 #'

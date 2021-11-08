@@ -2,7 +2,7 @@
 % Please edit documentation in R/show_available_browsers.R
 \name{show_available_browsers}
 \alias{show_available_browsers}
-\title{show_available_browsers}
+\title{Show available browsers}
 \usage{
 show_available_browsers(api_key)
 }

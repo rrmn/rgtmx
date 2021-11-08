@@ -14,7 +14,7 @@ get_all_tests(api_key, page_size = 50, page_number = 1)
 \item{page_number}{Page (default 1)}
 }
 \value{
-A data.frame object that contains tests and their meta data..
+A data.frame object that contains test IDs and their meta data.
 }
 \description{
 Get a table of tests, their report IDs and other meta data.

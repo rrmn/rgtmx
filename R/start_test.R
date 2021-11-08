@@ -1,4 +1,4 @@
-#' @title Start a GTmetrix test
+#' @title Start a GTmetrix test (and get the result)
 #'
 #' @description \code{start_test} starts a GTmetrix test and returns either the test itself (incl. meta data) or the associated report.
 #'
@@ -26,7 +26,7 @@
 #' @param browser_dppx Set the device pixel ratio for the analysis. Decimals are allowed.
 #' @param browser_rotate Swaps the width and height of the viewport for the analysis. \code{simulate_device} overrides this parameter with preset values.
 #'
-#' @return A data.frame object that contains either the test meta data or the GTmetrix report.
+#' @return A data.frame object that contains either the test meta data or the GTmetrix report (if it's already completed).
 #' @examples
 #' \dontrun{output_table <- start_test(
 #'                            url = "google.com",
