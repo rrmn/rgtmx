@@ -18,20 +18,25 @@ devtools::install_github("RomanAbashin/rgtmx")
 library(rgtmx)
 ```
 ### Start test (and get results)
+
+#### Minimal example #1
+
 ```r
-# Minimal example #1.
-# Returns the final report after checking test status roughly every 3 seconds. 
+# Returns the final report (after checking for completion roughly every 3 seconds). 
 result <- start_test("google.com", "[API_KEY]")
 ```
 This will start a test and wait for the report to be generated, returning the result as data.frame. Optionally, you can just simply return the test ID and other meta data via the parameter `wait_for_completion = FALSE`.
 
+#### Minimal example #2
+
 ```r
-# Minimal example #2.
-# Returns just the test ID and some meta data.
+# Returns just the test ID and some meta data. Does not wait for report completion.
 result <- start_test("google.com", "[API_KEY]", wait_for_completion = FALSE)
 ```
 
-Other optional parameters: `location`,
+#### Optional parameters
+
+Other optional parameters are: `location`,
 `browser`,
 `report`,
 `retention`,
@@ -51,6 +56,8 @@ Other optional parameters: `location`,
 `browser_height`,
 `browser_dppx`,
 `browser_rotate`.
+
+Please consult the manual via `?start_test` or the GTmetrix API documentation for further information.
 
 ### Locations
 ```r
