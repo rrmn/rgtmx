@@ -162,7 +162,7 @@ start_test <- function(url, api_key, wait_for_completion = TRUE, location = 1,
 
   if (wait_for_completion == TRUE) {
 
-    get_test(data$id, api_key, wait_for_completion = TRUE)
+    data <- get_test(data$id, api_key, wait_for_completion = TRUE)
 
   }
 
