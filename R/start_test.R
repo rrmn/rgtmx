@@ -154,9 +154,9 @@ start_test <- function(url, api_key, wait_for_completion = TRUE, location = 1,
   }
 
   data_raw <- jsonlite::fromJSON(rawToChar(res$content))
+  # has to stay stringsAsFactors = FALSE for R < v4.0
+  data <- as.data.frame(data_raw$data, stringsAsFactors = FALSE)
   meta <- data_raw$meta
-  data <- as.data.frame(data_raw$data)
-  rm(data_raw)
 
   message(paste0("Credits Used (Credits Left): ", meta$credits_used, " (", meta$credits_left, ")"))
 

@@ -72,7 +72,9 @@ get_all_tests <- function(api_key, page_size = 50, page_number = 1) {
     stop(paste0(error$title, ifelse(!is.null(error$detail), paste0(" - ", error$detail), ""), " (", error$code, ")"))
   }
 
-  data <- as.data.frame(jsonlite::fromJSON(rawToChar(res$content))$data)
+  data_raw <- jsonlite::fromJSON(rawToChar(res$content))
+  # has to stay stringsAsFactors = FALSE for R < v4.0
+  data <- as.data.frame(data_raw$data, stringsAsFactors = FALSE)
 
   return(data)
 
