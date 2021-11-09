@@ -1,7 +1,7 @@
 Package: rgtmx
 Type: Package
 Title: Manage GTmetrix Tests
-Version: 0.1.0
+Version: 0.1.0.9000
 Authors@R: 
     person("Roman A.", "Abashin", email = "r@romanabashin.com", role = c("cre","aut"))
 Maintainer: Roman A. Abashin <r@romanabashin.com>
