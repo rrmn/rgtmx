@@ -55,6 +55,7 @@ get_test <- function(test_id, api_key, wait_for_completion = TRUE) {
   data_raw <- jsonlite::fromJSON(rawToChar(res$content))
   # has to stay stringsAsFactors = FALSE for R < v4.0
   data <- as.data.frame(data_raw$data, stringsAsFactors = FALSE)
+  rm(data_raw)
 
 
   if (wait_for_completion == TRUE) {

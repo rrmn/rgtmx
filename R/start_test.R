@@ -157,6 +157,7 @@ start_test <- function(url, api_key, wait_for_completion = TRUE, location = 1,
   # has to stay stringsAsFactors = FALSE for R < v4.0
   data <- as.data.frame(data_raw$data, stringsAsFactors = FALSE)
   meta <- data_raw$meta
+  rm(data_raw)
 
   message(paste0("Credits Used (Credits Left): ", meta$credits_used, " (", meta$credits_left, ")"))
 

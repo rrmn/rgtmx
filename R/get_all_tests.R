@@ -75,6 +75,7 @@ get_all_tests <- function(api_key, page_size = 50, page_number = 1) {
   data_raw <- jsonlite::fromJSON(rawToChar(res$content))
   # has to stay stringsAsFactors = FALSE for R < v4.0
   data <- as.data.frame(data_raw$data, stringsAsFactors = FALSE)
+  rm(data_raw)
 
   return(data)
 

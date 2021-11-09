@@ -55,6 +55,7 @@ get_location_details <- function(location_id, api_key) {
   data_raw <- jsonlite::fromJSON(rawToChar(res$content))
   # has to stay stringsAsFactors = FALSE for R < v4.0
   data <- as.data.frame(data_raw$data, stringsAsFactors = FALSE)
+  rm(data_raw)
 
   return(data)
 
