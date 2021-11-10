@@ -4,10 +4,10 @@
 \alias{get_location_details}
 \title{Show location details}
 \usage{
-get_location_details(location_id, api_key)
+get_location_details(location, api_key)
 }
 \arguments{
-\item{location_id}{Location ID. (integer)}
+\item{location}{Location ID. (integer)}
 
 \item{api_key}{An active GTmetrix API key. (string)}
 }
