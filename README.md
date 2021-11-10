@@ -1,10 +1,8 @@
+# rgtmx
+
   <!-- badges: start -->
   [![R-CMD-check](https://github.com/RomanAbashin/rgtmx/workflows/R-CMD-check/badge.svg)](https://github.com/RomanAbashin/rgtmx/actions)
   <!-- badges: end -->
-  
-# rgtmx
-
-
 
 ## Context
 
