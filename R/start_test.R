@@ -36,10 +36,11 @@
 #' @export
 
 start_test <- function(url, api_key, wait_for_completion = TRUE, location = 1,
-                       browser = 3, report = "lighthouse", retention = 1, httpauth_username = NULL, httpauth_password = NULL, adblock = 1, cookies = NULL,
-                       video = 0, stop_onload = 0, throttle = NULL,
-                       allow_url = NULL, block_url = NULL, dns = NULL,
-                       simulate_device = NULL, user_agent = NULL,
+                       browser = 3, report = "lighthouse", retention = 1,
+                       httpauth_username = NULL, httpauth_password = NULL,
+                       adblock = 1, cookies = NULL, video = 0, stop_onload = 0,
+                       throttle = NULL, allow_url = NULL, block_url = NULL,
+                       dns = NULL, simulate_device = NULL, user_agent = NULL,
                        browser_width = NULL, browser_height = NULL,
                        browser_dppx = NULL, browser_rotate = NULL) {
 
