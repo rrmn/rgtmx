@@ -13,7 +13,7 @@
 #' @param location Location ID. Default = "1"
 #' @param browser Location ID. Default = "3"
 #' @param report A string for the type of report. "lighthouse" (default)
-#' for Lighthouse, "legacy" for PageSpeed/YSlow, "lighthouse,legacy" for both,
+#' for `Lighthouse`, "legacy" for `PageSpeed`/`YSlow`, "lighthouse,legacy" for both,
 #' "none" for a metrics-only report.
 #' @param retention Choose how long (in months) the report will be retained
 #' and accessible. Valid values: 1 (default), 6, 12, 24.
@@ -21,11 +21,11 @@
 #' authentication. (string)
 #' @param httpauth_password Password for the test page HTTP access
 #' authentication. (string)
-#' @param adblock Enable AdBlock. 1 (default) = yes, 0 = no.
+#' @param adblock Enable AdBlock. 0 (default) = no, 1 = yes.
 #' @param cookies Specify cookies to supply with test page requests.
 #' @param video Enable generation of video. 0 (default) = no, 1 = yes
-#' @param stop_onload Stop the test at window.onload instead of after the page
-#' has fully loaded (ie. 2 seconds of network inactivity).
+#' @param stop_onload Stop the test at `window.onload` instead of after the page
+#' has fully loaded (i.e. 2 seconds of network inactivity).
 #' 0 (default) = no, 1 = yes
 #' @param throttle Throttle the connection. Speed measured in Kbps, latency
 #' in ms. Format: "up/down/latency"

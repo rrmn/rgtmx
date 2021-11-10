@@ -46,7 +46,7 @@ will be returned. (TRUE, FALSE)}
 \item{browser}{Location ID. Default = "3"}
 
 \item{report}{A string for the type of report. "lighthouse" (default)
-for Lighthouse, "legacy" for PageSpeed/YSlow, "lighthouse,legacy" for both,
+for `Lighthouse`, "legacy" for `PageSpeed`/`YSlow`, "lighthouse,legacy" for both,
 "none" for a metrics-only report.}
 
 \item{retention}{Choose how long (in months) the report will be retained
@@ -58,14 +58,14 @@ authentication. (string)}
 \item{httpauth_password}{Password for the test page HTTP access
 authentication. (string)}
 
-\item{adblock}{Enable AdBlock. 1 (default) = yes, 0 = no.}
+\item{adblock}{Enable AdBlock. 0 (default) = no, 1 = yes.}
 
 \item{cookies}{Specify cookies to supply with test page requests.}
 
 \item{video}{Enable generation of video. 0 (default) = no, 1 = yes}
 
-\item{stop_onload}{Stop the test at window.onload instead of after the page
-has fully loaded (ie. 2 seconds of network inactivity).
+\item{stop_onload}{Stop the test at `window.onload` instead of after the page
+has fully loaded (i.e. 2 seconds of network inactivity).
 0 (default) = no, 1 = yes}
 
 \item{throttle}{Throttle the connection. Speed measured in Kbps, latency

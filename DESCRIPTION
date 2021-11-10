@@ -24,3 +24,4 @@ Suggests:
 Config/testthat/edition: 3
 RoxygenNote: 7.1.2
 VignetteBuilder: knitr
+Language: en-US
