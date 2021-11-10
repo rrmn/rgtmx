@@ -26,6 +26,8 @@ check_input(
 
 \item{max_value}{.}
 
+\item{max_length}{.}
+
 \item{variable_name}{.}
 
 \item{is_missing}{.}
