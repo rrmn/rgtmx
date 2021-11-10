@@ -14,7 +14,7 @@ start_test(
   retention = 1,
   httpauth_username = NULL,
   httpauth_password = NULL,
-  adblock = 1,
+  adblock = 0,
   cookies = NULL,
   video = 0,
   stop_onload = 0,
