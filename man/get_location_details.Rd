@@ -12,11 +12,14 @@ get_location_details(location, api_key)
 \item{api_key}{An active GTmetrix API key. (string)}
 }
 \value{
-A data.frame object that contains available locations and their meta data.
+A data.frame object that contains available locations
+and their meta data.
 }
 \description{
 Get details for a specific locations ID.
 }
 \examples{
-\dontrun{output_table <- get_location_details(location_id = 3, api_key = "API_KEY")}
+\dontrun{output_table <- get_location_details(
+                             location_id = 3, api_key = "API_KEY"
+                         )}
 }

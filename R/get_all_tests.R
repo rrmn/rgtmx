@@ -25,7 +25,8 @@ get_all_tests <- function(api_key, page_size = 50, page_number = 1) {
 
 
   res <- httr::GET(
-    url = paste0("https://gtmetrix.com/api/2.0/tests", "?page[number]=", page_number, "&page[size]=", page_size),
+    url = paste0("https://gtmetrix.com/api/2.0/tests", "?page[number]=",
+                 page_number, "&page[size]=", page_size),
     httr::authenticate(api_key, ""),
     httr::content_type("application/vnd.api+json")
   )
@@ -33,7 +34,9 @@ get_all_tests <- function(api_key, page_size = 50, page_number = 1) {
   # Throw exception if there's an error
   if (httr::status_code(res) != 200) {
     error <- jsonlite::fromJSON(rawToChar(res$content))$error
-    stop(paste0(error$title, ifelse(!is.null(error$detail), paste0(" - ", error$detail), ""), " (", error$code, ")"))
+    stop(paste0(error$title, ifelse(
+      !is.null(error$detail),
+      paste0(" - ", error$detail), ""), " (", error$code, ")"))
   }
 
   data_raw <- jsonlite::fromJSON(rawToChar(res$content))

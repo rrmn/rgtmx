@@ -1,12 +1,18 @@
 #' @title Get status and meta data of a specific test
 #'
-#' @description Get the status and meta data of a specific GTmetrix test. Returns the associated report instead, if the report is already completed.
+#' @description Get the status and meta data of a specific GTmetrix test.
+#' Returns the associated report instead, if the report is already completed.
 #'
 #' @param test_id ID of a GTmetrix test. (string)
 #' @param api_key An active GTmetrix API key. (string)
-#' @param wait_for_completion Whether the function should wait for the completion of the test. If TRUE (default), the report associated with the test ID will be requested in roughly 3 second intervals and returned, when successful. If FALSE, the meta data of the test will be returned. (TRUE, FALSE)
+#' @param wait_for_completion Whether the function should wait for the
+#' completion of the test. If TRUE (default), the report associated with
+#' the test ID will be requested in roughly 3 second intervals and returned,
+#' when successful. If FALSE, the meta data of the test
+#' will be returned. (TRUE, FALSE)
 #'
-#' @return  A data.frame object that contains either the test meta data or the GTmetrix report (if it's already completed)
+#' @return  A data.frame object that contains either the test meta data or the
+#' GTmetrix report (if it's already completed)
 #' @examples
 #' \dontrun{output_table <- get_test(
 #'                            test_id = "TEST_ID",
@@ -36,7 +42,9 @@ get_test <- function(test_id, api_key, wait_for_completion = TRUE) {
   # Throw exception if there's an error
   if (httr::status_code(res) != 200) {
     error <- jsonlite::fromJSON(rawToChar(res$content))$error
-    stop(paste0(error$title, ifelse(!is.null(error$detail), paste0(" - ", error$detail), ""), " (", error$code, ")"))
+    stop(paste0(error$title, ifelse(
+      !is.null(error$detail),
+      paste0(" - ", error$detail), ""), " (", error$code, ")"))
   }
 
   data_raw <- jsonlite::fromJSON(rawToChar(res$content))
@@ -52,7 +60,8 @@ get_test <- function(test_id, api_key, wait_for_completion = TRUE) {
     while (type == "test") {
 
       timeout <- round(stats::runif(1, 3, 4), 2)
-      message(paste0("Report not generated, yet. Retrying in ", timeout, " seconds..."))
+      message(paste0("Report not generated, yet. Retrying in ",
+                     timeout, " seconds..."))
       Sys.sleep(timeout)
 
       data <- get_test(test_id, api_key)

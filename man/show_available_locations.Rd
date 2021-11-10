@@ -10,7 +10,8 @@ show_available_locations(api_key)
 \item{api_key}{An active GTmetrix API key. (string)}
 }
 \value{
-A data.frame object that contains available locations and their meta data.
+A data.frame object that contains available locations and their
+meta data.
 }
 \description{
 Show available locations for the supplied API key.

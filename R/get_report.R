@@ -5,7 +5,8 @@
 #' @param report_id ID of a GTmetrix report. (string)
 #' @param api_key An active GTmetrix API key. (string)
 #'
-#' @return  A data.frame object that contains a GTmetrix report and its meta data.
+#' @return  A data.frame object that contains a GTmetrix report and its
+#' meta data.
 #' @examples
 #' \dontrun{output_table <- get_report(
 #'                            test_id = "REPORT_ID",
@@ -32,7 +33,9 @@ get_report <- function(report_id, api_key) {
   # Throw exception if there's an error
   if (httr::status_code(res) != 200) {
     error <- jsonlite::fromJSON(rawToChar(res$content))$error
-    stop(paste0(error$title, ifelse(!is.null(error$detail), paste0(" - ", error$detail), ""), " (", error$code, ")"))
+    stop(paste0(error$title, ifelse(
+      !is.null(error$detail),
+      paste0(" - ", error$detail), ""), " (", error$code, ")"))
   }
 
   data_raw <- jsonlite::fromJSON(rawToChar(res$content))

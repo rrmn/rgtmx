@@ -12,7 +12,8 @@ get_report(report_id, api_key)
 \item{api_key}{An active GTmetrix API key. (string)}
 }
 \value{
-A data.frame object that contains a GTmetrix report and its meta data.
+A data.frame object that contains a GTmetrix report and its
+meta data.
 }
 \description{
 Get status and meta data of a specific GTmetrix report.

@@ -1,6 +1,7 @@
 #' @title Get the status of your GTmetrix account
 #'
-#' @description Show available credits and other meta data for the suppliad API key.
+#' @description Show available credits and other meta data for the
+#' supplied API key.
 #'
 #' @param api_key An active GTmetrix API key. (string)
 #'
@@ -26,7 +27,10 @@ get_account_status <- function(api_key) {
   # Throw exception if there's an error
   if (httr::status_code(res) != 200) {
     error <- jsonlite::fromJSON(rawToChar(res$content))$error
-    stop(paste0(error$title, ifelse(!is.null(error$detail), paste0(" - ", error$detail), ""), " (", error$code, ")"))
+    stop(paste0(error$title, ifelse(
+      !is.null(error$detail),
+      paste0(" - ", error$detail), ""),
+      " (", error$code, ")"))
   }
 
   data_raw <- jsonlite::fromJSON(rawToChar(res$content))

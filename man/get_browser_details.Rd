@@ -12,11 +12,14 @@ get_browser_details(browser, api_key)
 \item{api_key}{An active GTmetrix API key. (string)}
 }
 \value{
-A data.frame object that contains available browsers and their meta data.
+A data.frame object that contains available browsers and their
+meta data.
 }
 \description{
 Get details for a specific browsers ID.
 }
 \examples{
-\dontrun{output_table <- get_browser_details(browser_id = 3, api_key = "API_KEY")}
+\dontrun{output_table <- get_browser_details(
+                             browser_id = 3, api_key = "API_KEY"
+                         )}
 }

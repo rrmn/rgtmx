@@ -11,13 +11,19 @@ get_test(test_id, api_key, wait_for_completion = TRUE)
 
 \item{api_key}{An active GTmetrix API key. (string)}
 
-\item{wait_for_completion}{Whether the function should wait for the completion of the test. If TRUE (default), the report associated with the test ID will be requested in roughly 3 second intervals and returned, when successful. If FALSE, the meta data of the test will be returned. (TRUE, FALSE)}
+\item{wait_for_completion}{Whether the function should wait for the
+completion of the test. If TRUE (default), the report associated with
+the test ID will be requested in roughly 3 second intervals and returned,
+when successful. If FALSE, the meta data of the test
+will be returned. (TRUE, FALSE)}
 }
 \value{
-A data.frame object that contains either the test meta data or the GTmetrix report (if it's already completed)
+A data.frame object that contains either the test meta data or the
+GTmetrix report (if it's already completed)
 }
 \description{
-Get the status and meta data of a specific GTmetrix test. Returns the associated report instead, if the report is already completed.
+Get the status and meta data of a specific GTmetrix test.
+Returns the associated report instead, if the report is already completed.
 }
 \examples{
 \dontrun{output_table <- get_test(

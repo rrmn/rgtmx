@@ -10,7 +10,8 @@ show_available_browsers(api_key)
 \item{api_key}{An active GTmetrix API key. (string)}
 }
 \value{
-A data.frame object that contains available browsers and their meta data.
+A data.frame object that contains available browsers and their
+meta data.
 }
 \description{
 Show available browsers for the supplied API key.

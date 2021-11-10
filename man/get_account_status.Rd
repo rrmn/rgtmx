@@ -13,7 +13,8 @@ get_account_status(api_key)
 A data.frame that contains meta data of a GTmetrix account.
 }
 \description{
-Show available credits and other meta data for the suppliad API key.
+Show available credits and other meta data for the
+supplied API key.
 }
 \examples{
 \dontrun{output_table <- get_account_status(

@@ -5,9 +5,12 @@
 #' @param location Location ID. (integer)
 #' @param api_key An active GTmetrix API key. (string)
 #'
-#' @return A data.frame object that contains available locations and their meta data.
+#' @return A data.frame object that contains available locations
+#' and their meta data.
 #' @examples
-#' \dontrun{output_table <- get_location_details(location_id = 3, api_key = "API_KEY")}
+#' \dontrun{output_table <- get_location_details(
+#'                              location_id = 3, api_key = "API_KEY"
+#'                          )}
 #' @export
 
 get_location_details <- function(location, api_key) {
@@ -29,7 +32,9 @@ get_location_details <- function(location, api_key) {
   # Throw exception if there's an error
   if (httr::status_code(res) != 200) {
     error <- jsonlite::fromJSON(rawToChar(res$content))$error
-    stop(paste0(error$title, ifelse(!is.null(error$detail), paste0(" - ", error$detail), ""), " (", error$code, ")"))
+    stop(paste0(error$title, ifelse(
+      !is.null(error$detail),
+      paste0(" - ", error$detail), ""), " (", error$code, ")"))
   }
 
   data_raw <- jsonlite::fromJSON(rawToChar(res$content))

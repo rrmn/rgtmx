@@ -38,7 +38,8 @@ check_input <- function(input, input_type, input_validation = NULL,
   } else if (input == "") {
     stop("Please supply ", variable_name, ". (is empty string)")
   } else if (length(input) > max_length) {
-    stop("Too many values supplied for ", variable_name, ". (max_length is ", max_length, ")")
+    stop("Too many values supplied for ", variable_name, ". (max_length is ",
+         max_length, ")")
   }
 
   if (input_type == "character") {
@@ -48,10 +49,12 @@ check_input <- function(input, input_type, input_validation = NULL,
         input <- as.character(input)
       },
       error = function(e) {
-        stop("Could not coerce ", variable_name, " to the correct format. (is not ", input_type, " type)")
+        stop("Could not coerce ", variable_name,
+             " to the correct format. (is not ", input_type, " type)")
       },
       warning = function(w) {
-        stop("Could not coerce ", variable_name, " to the correct format. (is not ", input_type, " type)")
+        stop("Could not coerce ", variable_name,
+             " to the correct format. (is not ", input_type, " type)")
       }
     )
 
@@ -62,17 +65,21 @@ check_input <- function(input, input_type, input_validation = NULL,
         input <- as.numeric(input)
       },
       error = function(e) {
-        stop("Could not coerce ", variable_name, " to the correct format. (is not ", input_type, " type)")
+        stop("Could not coerce ", variable_name,
+             " to the correct format. (is not ", input_type, " type)")
       },
       warning = function(w) {
-        stop("Could not coerce ", variable_name, " to the correct format. (is not ", input_type, " type)")
+        stop("Could not coerce ", variable_name,
+             " to the correct format. (is not ", input_type, " type)")
       }
     )
 
     if (input < min_value) {
-      stop("Please enter a ", variable_name, " higher than ", min_value, ". (is lower than min_value)")
+      stop("Please enter a ", variable_name,
+           " higher than ", min_value, ". (is lower than min_value)")
     } else if (input > max_value) {
-      stop("Please enter a ", variable_name, " lower than ", max_value, ". (is higher than min_value)")
+      stop("Please enter a ", variable_name,
+           " lower than ", max_value, ". (is higher than min_value)")
     }
 
   } else if (input_type == "logical") {
@@ -82,10 +89,12 @@ check_input <- function(input, input_type, input_validation = NULL,
         as.logical(input)
       },
       error = function(e) {
-        stop("Could not coerce ", variable_name, " to the correct format. (is not ", input_type, " type)")
+        stop("Could not coerce ", variable_name,
+             " to the correct format. (is not ", input_type, " type)")
       },
       warning = function(w) {
-        stop("Could not coerce ", variable_name, " to the correct format. (is not ", input_type, " type)")
+        stop("Could not coerce ", variable_name,
+             " to the correct format. (is not ", input_type, " type)")
       }
     )
 
