@@ -4,10 +4,10 @@
 \alias{get_browser_details}
 \title{Show browser details}
 \usage{
-get_browser_details(browser_id, api_key)
+get_browser_details(browser, api_key)
 }
 \arguments{
-\item{browser_id}{Browser ID. (integer)}
+\item{browser}{Browser ID. (integer)}
 
 \item{api_key}{An active GTmetrix API key. (string)}
 }
