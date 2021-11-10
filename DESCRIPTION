@@ -1,7 +1,7 @@
 Package: rgtmx
 Type: Package
 Title: Manage GTmetrix Tests in R
-Version: 0.1.3
+Version: 0.1.3.9000
 Authors@R: 
     person("Roman A.", "Abashin", email = "roman@nougat.ai", role = c("cre","aut"))
 Maintainer: Roman A. Abashin <roman@nougat.ai>
