@@ -4,3 +4,4 @@
 ^config.R
 ^\.github$
 ^LICENSE\.md$
+^cran-comments\.md$
