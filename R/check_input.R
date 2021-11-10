@@ -7,6 +7,7 @@
 #' @param input_validation .
 #' @param min_value .
 #' @param max_value .
+#' @param max_length .
 #' @param variable_name .
 #' @param is_missing .
 #'
