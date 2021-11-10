@@ -13,51 +13,15 @@
 
 get_all_tests <- function(api_key, page_size = 50, page_number = 1) {
 
+  check_input(input = api_key, input_type = "character",
+              variable_name = "api_key",
+              is_missing = missing(api_key))
 
-  if (is.null(page_size)) {
-    stop("Please enter a page size")
-  } else if (is.na(page_size)) {
-    stop("Please enter a page size")
-  } else if (page_size == "") {
-    stop("Please enter a page size")
-  } else if (!is.numeric(page_size)) {
-    stop("Please enter the page size as a number")
-  } else if (!length(page_size) == 1L) {
-    stop("Please enter the page size as a single value")
-  } else if (page_size > 500L) {
-    stop("Please enter a page size of 500 or smaller")
-  } else if (page_size < 1L) {
-    stop("Please enter a page size of 1 or larger")
-  }
+  check_input(input = page_number, input_type = "numeric",
+              variable_name = "page_number", min_value = 1L, max_value = 500L)
 
-  if (is.null(page_number)) {
-    stop("Please enter a page number")
-  } else if (is.na(page_number)) {
-    stop("Please enter a page number")
-  } else if (page_number == "") {
-    stop("Please enter a page number")
-  } else if (!is.numeric(page_number)) {
-    stop("Please enter the page number as a number")
-  } else if (!length(page_number) == 1L) {
-    stop("Please enter the page number as a single value")
-  } else if (page_number < 1L) {
-    stop("Please enter a page number of 1 or larger")
-  }
-
-
-
-
-  if (missing(api_key)) {
-    stop("Please enter a API key")
-  } else if (is.null(api_key)) {
-    stop("Please enter a API key")
-  } else if (is.na(api_key)) {
-    stop("Please enter a API key")
-  } else if (api_key == "") {
-    stop("Please enter a API key")
-  } else if (!is.character(api_key)) {
-    stop("Please enter the API key as a character string")
-  }
+  check_input(input = page_number, input_type = "numeric",
+              variable_name = "page_number", min_value = 1L)
 
 
   res <- httr::GET(

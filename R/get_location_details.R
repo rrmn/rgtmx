@@ -2,7 +2,7 @@
 #'
 #' @description Get details for a specific locations ID.
 #'
-#' @param location_id Location ID. (integer)
+#' @param location Location ID. (integer)
 #' @param api_key An active GTmetrix API key. (string)
 #'
 #' @return A data.frame object that contains available locations and their meta data.
@@ -10,34 +10,15 @@
 #' \dontrun{output_table <- get_location_details(location_id = 3, api_key = "API_KEY")}
 #' @export
 
-get_location_details <- function(location_id, api_key) {
+get_location_details <- function(location, api_key) {
 
-  if (missing(location_id)) {
-    stop("Please enter a location ID")
-  } else if (is.null(location_id)) {
-    stop("Please enter a location ID")
-  } else if (is.na(location_id)) {
-    stop("Please enter a location ID")
-  } else if (location_id == "") {
-    stop("Please enter a location ID")
-  } else if (!is.numeric(location_id)) {
-    stop("Please enter the location ID as a number")
-  } else if (!length(location_id) == 1L) {
-    stop("Please enter the location ID as a single value")
-  }
+  check_input(input = location, input_type = "character",
+              variable_name = "location",
+              is_missing = missing(location))
 
-
-  if (missing(api_key)) {
-    stop("Please enter a API key")
-  } else if (is.null(api_key)) {
-    stop("Please enter a API key")
-  } else if (is.na(api_key)) {
-    stop("Please enter a API key")
-  } else if (api_key == "") {
-    stop("Please enter a API key")
-  } else if (!is.character(api_key)) {
-    stop("Please enter the API key as a character string")
-  }
+  check_input(input = api_key, input_type = "character",
+              variable_name = "api_key",
+              is_missing = missing(api_key))
 
 
   res <- httr::GET(

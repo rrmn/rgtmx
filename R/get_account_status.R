@@ -13,18 +13,9 @@
 
 get_account_status <- function(api_key) {
 
-  if (missing(api_key)) {
-    stop("Please enter a API key")
-  } else if (is.null(api_key)) {
-    stop("Please enter a API key")
-  } else if (is.na(api_key)) {
-    stop("Please enter a API key")
-  } else if (api_key == "") {
-    stop("Please enter a API key")
-  } else if (!is.character(api_key)) {
-    stop("Please enter the API key as a character string")
-  }
-
+  check_input(input = api_key, input_type = "character",
+              variable_name = "api_key",
+              is_missing = missing(api_key))
 
   res <- httr::GET(
     url = paste0("https://gtmetrix.com/api/2.0/status"),

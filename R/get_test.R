@@ -16,29 +16,16 @@
 
 get_test <- function(test_id, api_key, wait_for_completion = TRUE) {
 
-  if (missing(test_id)) {
-    stop("Please enter a test ID")
-  } else if (is.null(test_id)) {
-    stop("Please enter a test ID")
-  } else if (is.na(test_id)) {
-    stop("Please enter a test ID")
-  } else if (test_id == "") {
-    stop("Please enter a test ID")
-  } else if (!is.character(test_id)) {
-    stop("Please enter the test ID as a character string")
-  }
+  check_input(input = test_id, input_type = "character",
+              variable_name = "test_id",
+              is_missing = missing(test_id))
 
-  if (missing(api_key)) {
-    stop("Please enter a API key")
-  } else if (is.null(api_key)) {
-    stop("Please enter a API key")
-  } else if (is.na(api_key)) {
-    stop("Please enter a API key")
-  } else if (api_key == "") {
-    stop("Please enter a API key")
-  } else if (!is.character(api_key)) {
-    stop("Please enter the API key as a character string")
-  }
+  check_input(input = api_key, input_type = "character",
+              variable_name = "api_key",
+              is_missing = missing(api_key))
+
+  check_input(input = wait_for_completion, input_type = "logical",
+              variable_name = "wait_for_completion")
 
   res <- httr::GET(
     url = paste0("https://gtmetrix.com/api/2.0/tests/", test_id),

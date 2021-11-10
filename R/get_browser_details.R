@@ -2,7 +2,7 @@
 #'
 #' @description Get details for a specific browsers ID.
 #'
-#' @param browser_id Browser ID. (integer)
+#' @param browser Browser ID. (integer)
 #' @param api_key An active GTmetrix API key. (string)
 #'
 #' @return A data.frame object that contains available browsers and their meta data.
@@ -10,34 +10,15 @@
 #' \dontrun{output_table <- get_browser_details(browser_id = 3, api_key = "API_KEY")}
 #' @export
 
-get_browser_details <- function(browser_id, api_key) {
+get_browser_details <- function(browser, api_key) {
 
-  if (missing(browser_id)) {
-    stop("Please enter a browser ID")
-  } else if (is.null(browser_id)) {
-    stop("Please enter a browser ID")
-  } else if (is.na(browser_id)) {
-    stop("Please enter a browser ID")
-  } else if (browser_id == "") {
-    stop("Please enter a browser ID")
-  } else if (!is.numeric(browser_id)) {
-    stop("Please enter the browser ID as a number")
-  } else if (!length(browser_id) == 1L) {
-    stop("Please enter the browser ID as a single value")
-  }
+  check_input(input = browser, input_type = "character",
+              variable_name = "browser",
+              is_missing = missing(browser))
 
-
-  if (missing(api_key)) {
-    stop("Please enter a API key")
-  } else if (is.null(api_key)) {
-    stop("Please enter a API key")
-  } else if (is.na(api_key)) {
-    stop("Please enter a API key")
-  } else if (api_key == "") {
-    stop("Please enter a API key")
-  } else if (!is.character(api_key)) {
-    stop("Please enter the API key as a character string")
-  }
+  check_input(input = api_key, input_type = "character",
+              variable_name = "api_key",
+              is_missing = missing(api_key))
 
 
   res <- httr::GET(
