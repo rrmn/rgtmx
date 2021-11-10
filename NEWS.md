@@ -1,6 +1,12 @@
 # rgtmx (development version)
 
 
+# rgtmx 0.1.2.0
+
+* Improvement: Added generalized internal check_input method
+* Improvement: Added input_validation
+* Improvement: Added validation to optional parameters
+* Bugfix: Changed default of adblock to 0
 
 # rgtmx 0.1.1.0
 
