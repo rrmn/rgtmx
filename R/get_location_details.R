@@ -20,9 +20,8 @@ get_location_details <- function(location, api_key) {
               variable_name = "api_key",
               is_missing = missing(api_key))
 
-
   res <- httr::GET(
-    url = paste0("https://gtmetrix.com/api/2.0/locations/", location_id),
+    url = paste0("https://gtmetrix.com/api/2.0/locations/", location),
     httr::authenticate(api_key, ""),
     httr::content_type("application/vnd.api+json")
   )
