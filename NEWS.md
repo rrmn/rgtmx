@@ -1,5 +1,8 @@
 # rgtmx (development version)
 
+# rgtmx 0.1.4
+* Improvements in description
+
 # rgtmx 0.1.3
 * Changed for release to CRAN
 
