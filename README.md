@@ -16,6 +16,18 @@ Roman
 
 ## Usage
 
+### Installation
+
+CRAN:
+
+```r
+# Install and load library.
+install.packages("rgtmx")
+library(rgtmx)
+```
+
+Development version:
+
 ```r
 # Install and load library.
 devtools::install_github("RomanAbashin/rgtmx")
