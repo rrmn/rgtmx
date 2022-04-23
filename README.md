@@ -4,6 +4,11 @@
   [![R-CMD-check](https://github.com/RomanAbashin/rgtmx/workflows/R-CMD-check/badge.svg)](https://github.com/RomanAbashin/rgtmx/actions)
   <!-- badges: end -->
 
+
+## Description
+
+An R client for GTmetrix
+
 ## Context
 
 This is a convenience wrapper for the GTmetrix API 2.0.
